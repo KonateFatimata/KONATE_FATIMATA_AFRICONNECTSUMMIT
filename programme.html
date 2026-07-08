@@ -4,25 +4,194 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Programme - AfriConnect Summit 2026</title>
-    <link rel="stylesheet" href="css/style.css">
+    
+    <!-- MÊMES FICHIERS QUE INDEX.HTML -->
+    <link rel="stylesheet" href="CSS/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
-    <header>
-        <nav class="navbar">
-            <a href="index.html" class="logo">AfriConnect Summit 2026</a>
-            <button id="theme-toggle" aria-label="Changer de thème">🌙</button>
-        </nav>
+
+    <!-- HEADER IDENTIQUE A INDEX -->
+    <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo" aria-label="Accueil AfriConnect">AfriConnect<span>2026</span></a>
+            <nav aria-label="Navigation principale">
+                <a href="index.html">Accueil</a>
+                <a href="programme.html" class="active">Programme</a>
+                <a href="intervenants.html">Intervenants</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+               <div class="nav-actions">
+        <button id="theme-toggle" aria-label="Basculer Dark/Light Mode"><i class="bi bi-moon-fill"></i></button>
+        <a href="contact.html" class="btn btn-primary">S'inscrire</a>
+      </div>
     </header>
 
-    <main>
-        <h1>Programme de l'événement</h1>
-        <p>Découvrez les conférences, ateliers et panels du 15 au 17 Mars 2026 à Dakar.</p>
-    </main>
+    <!-- HERO INTERNE -->
+    <section class="hero-interne">
+        <div class="container">
+            <h1>Programme du Sommet</h1>
+            <div class="fil-ariane">
+                <a href="index.html">Accueil</a> > Programme
+            </div>
+        </div>
+    </section>
 
+    <!-- ONGLETS 3 JOURS + TABLEAUX -->
+<section class="programme container">
+    
+    <!-- BOUTONS DES ONGLETS -->
+    <div class="onglets">
+        <button class="tab-btn active" data-tab="jour1">15 Mai 2026 : Innovation & IA</button>
+        <button class="tab-btn" data-tab="jour2">16 Mai 2026 : Startups & Invest</button>
+        <button class="tab-btn" data-tab="jour3">17 Mai 2026 : Politiques</button>
+    </div>
+
+    <!-- CONTENU JOUR 1 - LE TIEN COMPLET -->
+    <div id="jour1" class="tab-content active">
+        <table>
+            <thead>
+                <tr><th>Heure</th><th>Session</th><th>Intervenant</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>08:00 - 09:00</td><td>Accueil & Petit déjeuner</td><td>-</td></tr>
+                <tr><td>09:00 - 10:30</td><td>Keynote : L'Afrique à l'ère de l'IA</td><td>Dr. A. Diallo</td></tr>
+                <tr><td>10:45 - 12:00</td><td>Atelier : Construire avec ChatGPT</td><td>F. Konaté</td></tr>
+                <tr><td>14:00 - 15:30</td><td>Panel : Fintech du Futur</td><td>Wave, Orange Money</td></tr>
+                <tr><td>15:45 - 17:00</td><td>Pitch Startups : 10 Projets</td><td>Jury</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- CONTENU JOUR 2 - À REMPLIR -->
+    <div id="jour2" class="tab-content">
+        <table>
+            <thead>
+                <tr><th>Heure</th><th>Session</th><th>Intervenant</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>09:00 - 10:30</td><td>Conférence : Lever des fonds</td><td>VC Africains</td></tr>
+                <tr><td>11:00 - 13:00</td><td>Demo Day Startups</td><td>30 Startups</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- CONTENU JOUR 3 - À REMPLIR -->
+    <div id="jour3" class="tab-content">
+        <table>
+            <thead>
+                <tr><th>Heure</th><th>Session</th><th>Intervenant</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>10:00 - 12:00</td><td>Table Ronde : Régulation</td><td>BCEAO, ARTP</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+</section>
+
+<!-- ONGLETS 3 JOURS + TABLEAUX -->
+<section class="programme container">
+    
+    <!-- BOUTONS DES ONGLETS -->
+    <div class="onglets">
+        <button class="tab-btn active" data-tab="jour1">15 Mai 2026 : Innovation & IA</button>
+        <button class="tab-btn" data-tab="jour2">16 Mai 2026 : Startups & Invest</button>
+        <button class="tab-btn" data-tab="jour3">17 Mai 2026 : Politiques</button>
+    </div>
+
+    <!-- CONTENU JOUR 1 - LE TIEN COMPLET -->
+    <div id="jour1" class="tab-content active">
+        <table>
+            <thead>
+                <tr><th>Heure</th><th>Session</th><th>Intervenant</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>08:00 - 09:00</td><td>Accueil & Petit déjeuner</td><td>-</td></tr>
+                <tr><td>09:00 - 10:30</td><td>Keynote : L'Afrique à l'ère de l'IA</td><td>Dr. A. Diallo</td></tr>
+                <tr><td>10:45 - 12:00</td><td>Atelier : Construire avec ChatGPT</td><td>F. Konaté</td></tr>
+                <tr><td>14:00 - 15:30</td><td>Panel : Fintech du Futur</td><td>Wave, Orange Money</td></tr>
+                <tr><td>15:45 - 17:00</td><td>Pitch Startups : 10 Projets</td><td>Jury</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- CONTENU JOUR 2 - À REMPLIR -->
+    <div id="jour2" class="tab-content">
+        <table>
+            <thead>
+                <tr><th>Heure</th><th>Session</th><th>Intervenant</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>09:00 - 10:30</td><td>Conférence : Lever des fonds</td><td>VC Africains</td></tr>
+                <tr><td>11:00 - 13:00</td><td>Demo Day Startups</td><td>30 Startups</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- CONTENU JOUR 3 - À REMPLIR -->
+    <div id="jour3" class="tab-content">
+        <table>
+            <thead>
+                <tr><th>Heure</th><th>Session</th><th>Intervenant</th></tr>
+            </thead>
+            <tbody>
+                <tr><td>10:00 - 12:00</td><td>Table Ronde : Régulation</td><td>BCEAO, ARTP</td></tr>
+            </tbody>
+        </table>
+    </div>
+
+</section>
+    
+     <!-- SECTION THEMATIQUES -->
+    <section class="thematiques">
+        <div class="container">
+            <h2>Nos 4 Thématiques Clés</h2>
+            <div class="grid-thematiques">
+                <div class="thematique-card"><i class="bi bi-robot icon"></i><h3>Intelligence Artificielle</h3><p>Découvrez comment l'IA transforme la santé, l'éducation et l'industrie en Afrique.</p></div>
+                <div class="thematique-card"><i class="bi bi-credit-card-2-front icon"></i><h3>Fintech & Paiement</h3><p>Le futur de la finance mobile, de la crypto et de l'inclusion bancaire.</p></div>
+                <div class="thematique-card"><i class="bi bi-tree icon"></i><h3>AgriTech & Climat</h3><p>Technologies pour une agriculture durable et résiliente face au changement climatique.</p></div>
+                <div class="thematique-card"><i class="bi bi-rocket icon"></i><h3>Entrepreneuriat & VC</h3><p>Rencontrez les investisseurs et apprenez à scaler vos startups à l'international.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER  -->
     <footer>
-        <p>&copy; <span id="year"></span> AfriConnect Summit</p>
+        <div class="container footer-container">
+            <div class="footer-col">
+                <h4 class="footer-logo">AfriConnect<span>2026</span></h4>
+                <p>Le plus grand sommet de la Tech en Afrique. 3 jours pour connecter, apprendre et investir dans l'avenir du continent.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Navigation</h4>
+                <a href="index.html">Accueil</a>
+                <a href="programme.html">Programme</a>
+                <a href="intervenants.html">Intervenants</a>
+                <a href="contact.html">Contact</a>
+            </div>
+            <div class="footer-col">
+                <h4>Nous Contacter</h4>
+                <p><i class="bi bi-geo-alt"></i> Centre CICAD, Diamniadio</p>
+                <p><i class="bi bi-envelope"></i> contact@africonnect.com</p>
+                <p><i class="bi bi-telephone"></i> +221 77 123 45 67</p>
+            </div>
+            <div class="footer-col">
+                <h4>Suivez-nous</h4>
+                <div class="reseaux">
+                    <a href="#"><i class="bi bi-facebook"></i></a>
+                    <a href="#"><i class="bi bi-twitter-x"></i></a>
+                    <a href="#"><i class="bi bi-instagram"></i></a>
+                    <a href="#"><i class="bi bi-linkedin"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>© 2026 AfriConnect. Tous droits réservés.</p>
+            <a href="#" class="retour-haut"><i class="bi bi-arrow-up"></i> Retour en haut</a>
+        </div>
     </footer>
-
-    <script src="js/main.js"></script>
+<script src="js/main.js"></script>
 </body>
 </html>
