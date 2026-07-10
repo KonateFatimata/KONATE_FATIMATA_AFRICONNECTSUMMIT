@@ -196,5 +196,70 @@ tabBtns.forEach(btn => {
 });
 
 
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    let isValid = true;
+    document.querySelectorAll('.erreur-msg').forEach(el => el.textContent = '');
+    
+    if(document.getElementById('nom').value.trim() === '') {
+        document.getElementById('nom').nextElementSibling.textContent = 'Le nom est obligatoire';
+        isValid = false;
+    }
+    if(isValid) alert('OK envoyé !');
+});
+
+
+console.log("JS est chargé"); // pour tester
+
+const form = document.getElementById('contactForm');
+
+form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    console.log("Bouton cliqué"); // pour tester
+
+    // Reset
+    document.querySelectorAll('.erreur-msg').forEach(el => el.textContent = '');
+    document.querySelectorAll('input, textarea, select').forEach(el => el.style.border = '1px solid #ccc');
+
+    let isValid = true;
+
+    // Nom
+    const nom = document.getElementById('nom');
+    if(nom.value.trim() === '') {
+        nom.nextElementSibling.textContent = 'Le nom est obligatoire';
+        nom.style.border = '2px solid red';
+        isValid = false;
+    }
+    
+    // Email
+    const email = document.getElementById('email');
+    if(email.value.trim() === '') {
+        email.nextElementSibling.textContent = 'Email obligatoire';
+        email.style.border = '2px solid red';
+        isValid = false;
+    }
+
+    // Tel
+    const tel = document.getElementById('telephone');
+    if(tel.value.trim() === '') {
+        tel.nextElementSibling.textContent = 'Téléphone obligatoire';
+        tel.style.border = '2px solid red';
+        isValid = false;
+    }
+
+    // Message
+    const message = document.getElementById('message');
+    if(message.value.trim().length < 10) {
+        message.nextElementSibling.textContent = 'Min 10 caractères';
+        message.style.border = '2px solid red';
+        isValid = false;
+    }
+
+    if(isValid) {
+        alert('Candidature envoyée avec succès !');
+        form.reset();
+    }
+});
+
 
 
