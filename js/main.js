@@ -263,3 +263,77 @@ form.addEventListener('submit', function(e) {
 
 
 
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  
+  const counters = document.querySelectorAll('.counter');
+  let animated = false; // pour lancer 1 seule fois
+
+  function animateCounters() {
+    if(animated) return;
+    animated = true;
+    
+    counters.forEach(counter => {
+      const target = +counter.getAttribute('data-target');
+      let count = 0;
+      const speed = 200; // plus petit = plus rapide
+
+      const update = () => {
+        const inc = target / speed;
+        if(count < target) {
+          count += inc;
+          counter.innerText = Math.ceil(count);
+          setTimeout(update, 10);
+        } else {
+          counter.innerText = target;
+        }
+      };
+      update();
+    });
+  }
+
+  // Lancer quand on scroll et qu'on voit la section
+  window.addEventListener('scroll', () => {
+    const statsSection = document.getElementById('stats');
+    if(!statsSection) return;
+    
+    const sectionPos = statsSection.getBoundingClientRect().top;
+    const screenPos = window.innerHeight / 1.3;
+
+    if(sectionPos < screenPos) {
+      animateCounters();
+    }
+  })
+
+
+// CODE QUI MARCHE FORCEMENT
+function animateValue(id, start, end, duration) {
+    let range = end - start;
+    let current = start;
+    let increment = end > start? 1 : -1;
+    let stepTime = Math.abs(Math.floor(duration / range));
+    let obj = document.getElementById(id);
+    let timer = setInterval(function() {
+        current += increment;
+        obj.innerHTML = current;
+        if (current == end) {
+            clearInterval(timer);
+            if(id == 'c1') obj.innerHTML = "1200+";
+        }
+    }, stepTime);
+}
+
+// Lancer au scroll
+let started = false;
+window.addEventListener('scroll', function() {
+    let stats = document.getElementById('stats');
+    if(!started && stats.getBoundingClientRect().top < window.innerHeight - 100) {
+        started = true;
+        animateValue("c1", 0, 1200, 2000);
+        animateValue("c2", 0, 48, 1500);
+        animateValue("c3", 0, 3, 1000);
+        animateValue("c4", 0, 12, 1200);
+    }
+});

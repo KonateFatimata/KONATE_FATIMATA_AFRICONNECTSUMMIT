@@ -4,30 +4,232 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AfriConnect Summit 2026</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="CSS/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@700;900&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header>
-    <nav class="navbar">
-      <a href="index.html" class="logo">AfriConnect Summit 2026</a>
-      <button id="theme-toggle" aria-label="Changer de thème"><i class="bi bi-moon-stars"></i></button>
-    </nav>
+
+  <header class="navbar">
+    <div class="container">
+      <a href="index.html" class="logo" aria-label="Accueil AfriConnect Summit">AfriConnect<span>2026</span></a>
+      <nav aria-label="Navigation principale">
+        <a href="index.html" class="active">Accueil</a>
+        <a href="programme.html">Programme</a>
+        <a href="intervenants.html">Intervenants</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <button id="theme-toggle" aria-label="Basculer Dark/Light Mode"><i class="bi bi-moon-fill"></i></button>
+        <a href="contact.html" class="btn btn-primary">S'inscrire</a>
+      </div>
+    </div>
+    <button id="theme-toggle" class="btn btn-outline-dark ms-3">🌙</button>
+<div class="collapse navbar-collapse" id="navbarNav"> 
   </header>
 
   <main>
     <section class="hero">
-      <h1>Connecter l'Afrique Tech</h1>
-      <p>Dakar, Sénégal · 15 au 17 Mars 2026</p>
-    </section>
-  </main>
+    <div class="container">
+        <span class="badge-date">Dakar · 15-17 Mars 2026</span>
+        <h1>Le Futur de la Tech <br> Africaine</h1>
+        <p>Rejoignez 1200+ leaders, devs et investisseurs pour 3 jours d'innovation.</p>
+        <div class="hero-btns">
+            <a href="programme.html" class="btn-primary">Voir le Programme</a>
+            <a href="intervenants.html" class="btn-secondary">Les Speakers</a>
+        </div>
+    </div>
+</section>
+<section id="stats" class="stats-section">
+  <div class="container">
+    <div class="stats-grid">
+      <div class="stat-box">
+        <h2><span id="c1">0</span>+</h2>
+        <p>Participants</p>
+      </div>
+      <div class="stat-box">
+        <h2><span id="c2">0</span></h2>
+        <p>Intervenants</p>
+      </div>
+      <div class="stat-box">
+        <h2><span id="c3">0</span></h2>
+        <p>Jours</p>
+      </div>
+      <div class="stat-box">
+        <h2><span id="c4">0</span></h2>
+        <p>Pays</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <footer>
-    <p>&copy; <span id="year"></span> AfriConnect Summit</p>
-  </footer>
+<style>
+.stats-section { background: #0056b3; padding: 60px 0; margin: 40px 0; border-radius: 20px; }
+.stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 30px; }
+.stat-box { background: white; padding: 30px 20px; border-radius: 15px; text-align: center; }
+.stat-box h2 { font-size: 2.8rem; color: #0056b3; font-weight: 700; margin: 0; }
+.stat-box p { font-size: 1.1rem; color: #333; margin-top: 8px; }
+@media(max-width: 768px) { .stats-grid { grid-template-columns: repeat(2, 1fr); } }
+</style>
 
-  <script src="js/main.js"></script>
+<script>
+// CODE QUI MARCHE FORCEMENT
+function animateValue(id, start, end, duration) {
+    let range = end - start;
+    let current = start;
+    let increment = end > start? 1 : -1;
+    let stepTime = Math.abs(Math.floor(duration / range));
+    let obj = document.getElementById(id);
+    let timer = setInterval(function() {
+        current += increment;
+        obj.innerHTML = current;
+        if (current == end) {
+            clearInterval(timer);
+            if(id == 'c1') obj.innerHTML = "1200+";
+        }
+    }, stepTime);
+}
+
+// Lancer au scroll
+let started = false;
+window.addEventListener('scroll', function() {
+    let stats = document.getElementById('stats');
+    if(!started && stats.getBoundingClientRect().top < window.innerHeight - 100) {
+        started = true;
+        animateValue("c1", 0, 1200, 2000);
+        animateValue("c2", 0, 48, 1500);
+        animateValue("c3", 0, 3, 1000);
+        animateValue("c4", 0, 12, 1200);
+    }
+});
+</script>
+
+
+<!-- SECTION POURQUOI PARTICIPER -->
+<section id="why" class="container why">
+  <h2>Pourquoi Participer</h2>
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="icon">🚀</div>
+      <h3>Réseautage</h3>
+      <p>Rencontrez 1200+ leaders et décideurs venus de 12 pays pour créer des opportunités.</p>
+    </div>
+    <div class="why-card">
+      <div class="icon">💡</div>
+      <h3>Innovation</h3>
+      <p>Découvrez les dernières tendances avec 48 intervenants experts pendant 3 jours.</p>
+    </div>
+    <div class="why-card">
+      <div class="icon">🎯</div>
+      <h3>Apprentissage</h3>
+      <p>Ateliers pratiques et conférences pour booster vos compétences et votre carrière.</p>
+    </div>
+  </div>
+</section>
+
+<div class="argument-card scroll-animate">
+            <div class="icon">🌍</div>
+            <h3>Réseauter à l'échelle Panafricaine</h3>
+            <p>Rencontrez des leaders, investisseurs et innovateurs venus de plus de 15 pays africains pour créer des partenariats durables.</p>
+        </div>
+<!-- SECTION INTERVENANTS VEDETTES -->
+<section class="intervenants" id="intervenants">
+    <h2>Intervenants Vedettes</h2>
+    <div class="grid-intervenants">
+        
+        <div class="intervenant-card">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=150&h=150&fit=crop&crop=face" alt="Aïcha Diallo">
+            <h3>Aïcha Diallo</h3>
+            <p class="titre">CEO Fintech Africa</p>
+            <p class="pays">🇸🇳 Sénégal</p>
+        </div>
+
+        <div class="intervenant-card">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face" alt="Kwame Osei">
+            <h3>Kwame Osei</h3>
+            <p class="titre">Fondateur AgriTech</p>
+            <p class="pays">🇬🇭 Ghana</p>
+        </div>
+
+        <div class="intervenant-card">
+            <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&h=150&fit=crop&crop=face" alt="Fatou Ndiaye">
+            <h3>Fatou Ndiaye</h3>
+            <p class="titre">Experte en IA</p>
+            <p class="pays">🇨🇮 Côte d'Ivoire</p>
+        </div>
+
+        <div class="intervenant-card">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=face" alt="David Mutua">
+            <h3>David Mutua</h3>
+            <p class="titre">Investisseur VC</p>
+            <p class="pays">🇰🇪 Kenya</p>
+        </div>
+
+    </div>
+    <a href="intervenants.html" class="btn-voir-plus">Voir tous les intervenants</a>
+</section>
+
+
+<!-- SECTION SPONSORS -->
+<section class="sponsors" id="sponsors">
+    <h2>Nos Sponsors</h2>
+    
+    <h3 class="niveau or">Sponsors Or</h3>
+    <div class="sponsors-container or">
+        <img src="https://www.vectorlogo.zone/logos/google-icon.svg" alt="Google">
+        <img src="https://www.vectorlogo.zone/logos/microsoft-icon.svg" alt="Microsoft">
+    </div>
+
+    <h3 class="niveau argent">Sponsors Argent</h3>
+    <div class="sponsors-container argent">
+        <img src="https://www.vectorlogo.zone/logos/nike/nike-icon.svg" alt="Nike">
+        <img src="https://www.vectorlogo.zone/logos/netflix/netflix-icon.svg" alt="Netflix">
+        <img src="https://www.vectorlogo.zone/logos/facebook-icon.svg" alt="Facebook">
+    </div>
+
+    <h3 class="niveau bronze">Sponsors Bronze</h3>
+    <div class="sponsors-container bronze">
+        <img src="https://www.vectorlogo.zone/logos/github/github-icon.svg" alt="Github">
+        <img src="https://www.vectorlogo.zone/logos/javascript-icon.svg" alt="JavaScript">
+        <img src="https://www.vectorlogo.zone/logos/oracle/oracle-icon.svg" alt="Oracle">
+        <img src="https://www.vectorlogo.zone/logos/ibm-icon.svg" alt="IBM">
+    </div>
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+    <div class="footer-container">
+        
+        <div class="footer-col">
+            <h4>AfriConnect2026</h4>
+            <p>Le plus grand sommet de la Tech en Afrique. Connecter les talents, financer l'avenir.</p>
+        </div>
+
+        <div class="footer-col">
+            <h4>Navigation</h4>
+            <a href="index.html">Accueil</a>
+            <a href="programme.html">Programme</a>
+            <a href="intervenants.html">Intervenants</a>
+            <a href="contact.html">Contact</a>
+        </div>
+
+        <div class="footer-col">
+            <h4>Réseaux Sociaux</h4>
+            <div class="reseaux">
+                <a href="#">📘</a>
+                <a href="#">🐦</a>
+                <a href="#">📷</a>
+                <a href="#">💼</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>© <span id="year"></span> AfriConnect. Tous droits réservés.</p>
+        <a href="#" class="retour-haut">⬆ Retour en haut</a>
+    </div>
+</footer>
+<script src="js/main.js"></script>
 </body>
-</html> 
+</html>
