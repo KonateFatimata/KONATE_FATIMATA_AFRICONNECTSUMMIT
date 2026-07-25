@@ -337,3 +337,39 @@ window.addEventListener('scroll', function() {
         animateValue("c4", 0, 12, 1200);
     }
 });
+
+
+alert("Mode sombre chargé"); // enlève ça après
+
+document.addEventListener('DOMContentLoaded', () => {
+  // CSS
+  const style = document.createElement('style');
+  style.innerHTML = `
+    :root { --bg: #ffffff; --text: #000000; --hero: #0a4fb8; }
+    [data-theme="dark"] { --bg: #121212; --text: #ffffff; --hero: #000; }
+    body { background: var(--bg) !important; color: var(--text) !important; transition: 0.3s; }
+    header, .hero, section, footer { background: var(--bg) !important; color: var(--text) !important; }
+    [data-theme="dark"] .hero { background: var(--hero) !important; }
+    #theme-toggle { position: fixed; top: 20px; right: 20px; z-index: 9999; width: 45px; height: 45px; border-radius: 50%; border: 2px solid var(--text); background: var(--bg); cursor: pointer; font-size: 22px; }
+  `;
+  document.head.appendChild(style);
+
+  // BOUTON
+  const btn = document.createElement('button');
+  btn.id = 'theme-toggle';
+  btn.innerHTML = '🌙';
+  document.body.appendChild(btn);
+
+  // THEME
+  const html = document.documentElement;
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  html.setAttribute('data-theme', savedTheme);
+  btn.innerHTML = savedTheme === 'dark' ? '☀️' : '🌙';
+
+  btn.onclick = () => {
+    const newTheme = html.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+    html.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    btn.innerHTML = newTheme === 'dark' ? '☀️' : '🌙';
+  };
+});

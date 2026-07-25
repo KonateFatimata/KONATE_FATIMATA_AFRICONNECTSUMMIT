@@ -20,12 +20,9 @@
         <a href="contact.html">Contact</a>
       </nav>
       <div class="nav-actions">
-        <button id="theme-toggle" aria-label="Basculer Dark/Light Mode"><i class="bi bi-moon-fill"></i></button>
-        <a href="contact.html" class="btn btn-primary">S'inscrire</a>
-      </div>
+<a href="contact.html" class="btn btn-primary">S'inscrire</a>
+</div>
     </div>
-    <button id="theme-toggle" class="btn btn-outline-dark ms-3">🌙</button>
-<div class="collapse navbar-collapse" id="navbarNav"> 
   </header>
 
   <main>
@@ -230,6 +227,40 @@ window.addEventListener('scroll', function() {
         <a href="#" class="retour-haut">⬆ Retour en haut</a>
     </div>
 </footer>
-<script src="js/main.js"></script>
+<script src="./js/main.js?v=1"></script>
 </body>
 </html>
+
+
+
+<script>
+console.log("TEST 1");
+document.addEventListener('DOMContentLoaded', function() {
+  console.log("TEST 2 DOM PRET");
+  
+  // Bouton
+  let btn = document.createElement('button');
+  btn.innerText = '🌙';
+  btn.style = 'position:fixed;top:20px;right:20px;z-index:9999;width:50px;height:50px;border-radius:50%;font-size:24px;cursor:pointer';
+  document.body.appendChild(btn);
+  
+  // Theme
+  let html = document.documentElement;
+  html.setAttribute('data-theme', 'light');
+  
+  btn.onclick = function() {
+    if(html.getAttribute('data-theme') == 'light') {
+      html.setAttribute('data-theme', 'dark');
+      btn.innerText = '☀️';
+      document.body.style.background = '#121212';
+      document.body.style.color = '#fff';
+    } else {
+      html.setAttribute('data-theme', 'light');
+      btn.innerText = '🌙';
+      document.body.style.background = '#fff';
+      document.body.style.color = '#000';
+    }
+  }
+   alert("JS MARCHE ! Clique sur la lune");
+});
+</script>
