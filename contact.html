@@ -23,7 +23,7 @@
                 <a href="contact.html" class="active">Contact</a>
             </nav>
                <div class="nav-actions">
-        
+               <button id="theme-toggle">🌙</button> 
         <a href="contact.html" class="btn btn-primary">S'inscrire</a>
       </div>
     </header>
@@ -203,33 +203,16 @@
 </html>
 
 <script>
-console.log("TEST 1");
-document.addEventListener('DOMContentLoaded', function() {
-  console.log("TEST 2 DOM PRET");
-  
-  // Bouton
-  let btn = document.createElement('button');
-  btn.innerText = '🌙';
-  btn.style = 'position:fixed;top:20px;right:20px;z-index:9999;width:50px;height:50px;border-radius:50%;font-size:24px;cursor:pointer';
-  document.body.appendChild(btn);
-  
-  // Theme
-  let html = document.documentElement;
-  html.setAttribute('data-theme', 'light');
-  
-  btn.onclick = function() {
-    if(html.getAttribute('data-theme') == 'light') {
-      html.setAttribute('data-theme', 'dark');
-      btn.innerText = '☀️';
-      document.body.style.background = '#121212';
-      document.body.style.color = '#fff';
-    } else {
-      html.setAttribute('data-theme', 'light');
-      btn.innerText = '🌙';
-      document.body.style.background = '#fff';
-      document.body.style.color = '#000';
+    const btn = document.getElementById('theme-toggle');
+    const html = document.documentElement;
+
+    btn.onclick = function() {
+        if (html.getAttribute('data-theme') === 'dark') {
+            html.setAttribute('data-theme', 'light');
+            btn.innerText = '🌙';
+        } else {
+            html.setAttribute('data-theme', 'dark');
+            btn.innerText = '☀️';
+        }
     }
-  }
-  alert("JS MARCHE ! Clique sur la lune");
-});
 </script>
